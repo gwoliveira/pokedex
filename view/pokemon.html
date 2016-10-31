@@ -1,1 +1,12 @@
-pokemon = {{pokemonName}}
+<div ng-hide="carregando">
+    <div ng-hide="erro">
+        pokemonid = {{pokemon.id}} <br> name = {{pokemon.name}} <br> abilities = {{pokemon.abilities | json}} <br> sprites = {{pokemon.sprites | json}}
+    </div>
+    <div ng-show="erro">
+        ocorreu um erro ao buscar este pokemon
+        {{data | json}}
+    </div>
+</div>
+<div ng-show="carregando">
+  <img src="img/pokeemojiiiii.gif" class="img-responsive">
+</div>
