@@ -1,1 +1,13 @@
-TODO: pokemons list
+<div ng-hide="carregando">
+    <div ng-hide="erro">
+      <div class="list-group">
+        <a ng-repeat="pokemon in data.results" ng-href="#pokemon/{{pokemon.name}}" class="list-group-item">{{pokemon.name}}</a>
+      </div>
+    </div>
+    <div ng-show="erro">
+        ocorreu um erro:   {{data | json}}
+    </div>
+</div>
+<div ng-show="carregando">
+  <img src="img/pokeemojiiiii.gif" class="img-responsive">
+</div>
