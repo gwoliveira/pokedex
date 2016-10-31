@@ -1,13 +1,27 @@
 <div ng-hide="carregando">
     <div ng-hide="erro">
-      <div class="list-group">
-        <a ng-repeat="pokemon in data.results" ng-href="#pokemon/{{pokemon.name}}" class="list-group-item">{{pokemon.name}}</a>
-      </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">Pokemons</div>
+            <div class="panel-body">
+                <div class="list-group col-xs-6">
+                    <a ng-repeat="pokemon in data.results" ng-if="$even" ng-href="#pokemon/{{pokemon.name}}" class="list-group-item">{{pokemon.name}}</a>
+                </div>
+                <div class="list-group col-xs-6">
+                    <a ng-repeat="pokemon in data.results" ng-if="$odd" ng-href="#pokemon/{{pokemon.name}}" class="list-group-item">{{pokemon.name}}</a>
+                </div>
+            </div>
+            <div class="panel-footer">
+                <ul class="pager">
+                    <li ng-class="{disabled: data.previous == null}" class="previous"><a href ng-click="carregar(data.previous)"><span aria-hidden="true">&larr;</span> Anterior</a></li>
+                    <li ng-class="{disabled: data.next == null}" class="next"><a href ng-click="carregar(data.next)">Próximo <span aria-hidden="true">&rarr;</span></a></li>
+                </ul>
+            </div>
+        </div>
     </div>
     <div ng-show="erro">
-        ocorreu um erro:   {{data | json}}
+        ocorreu um erro: {{data | json}}
     </div>
 </div>
 <div ng-show="carregando">
-  <img src="img/pokeemojiiiii.gif" class="img-responsive">
+    <img src="img/pokeemojiiiii.gif" class="img-responsive">
 </div>
