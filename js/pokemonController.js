@@ -6,14 +6,14 @@ angular.module('pokedex')
             cache: $templateCache
         }).
         then(function(response) {
+
             $scope.pokemon = response.data;
             $scope.erro = false;
-            $scope.carregando = false;
-
         }, function(response) {
             $scope.erro = true;
             $scope.data = response.data || 'Request failed';
             $scope.status = response.status;
+        }).finally(function() {
             $scope.carregando = false;
         });
     });
