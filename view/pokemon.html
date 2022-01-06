@@ -1,6 +1,7 @@
 <div ng-hide="carregando">
     <div ng-hide="erro">
-        pokemonid = {{pokemon.id}} <br> name = {{pokemon.name}} <br> abilities = {{pokemon.abilities | json}} <br> sprites = {{pokemon.sprites | json}}
+        pokemonid = {{pokemon.id}} <br> name = {{pokemon.name}} <br>
+        <img src="{{pokemon.sprites.front_default}}"/>    
     </div>
     <div ng-show="erro">
         ocorreu um erro ao buscar este pokemon

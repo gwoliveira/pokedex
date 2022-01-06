@@ -18,5 +18,5 @@ angular.module('pokedex')
                 });
             }
         }
-        $scope.carregar("http://pokeapi.co/api/v2/pokemon/");
+        $scope.carregar("https://pokeapi.co/api/v2/pokemon/");
     });
